@@ -14,20 +14,17 @@ class Home extends StatelessWidget {
       floatingActionButton: CustomFloatingActionButton(),
       appBar: AppBar(
         title: Text("Notes", style: TextStyle(fontSize: 30)),
-        actions: [
-          Custom_Search_Icon(),
-        ],
+        actions: [Custom_Icon(i: Icon(Icons.search),),],
+        
       ),
       body: Listview_Of_Cards(),
     );
   }
 }
 
-class Custom_Search_Icon extends StatelessWidget {
-  const Custom_Search_Icon({
-    super.key,
-  });
-
+class Custom_Icon extends StatelessWidget {
+  const Custom_Icon({super.key, required this.i});
+  final Icon i;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -35,9 +32,9 @@ class Custom_Search_Icon extends StatelessWidget {
       padding: EdgeInsets.all(8),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(16),
-        color: const Color.fromARGB(232, 233, 41, 41),
+        // color: const Color.fromARGB(232, 233, 41, 41),
       ),
-      child: Icon(Icons.search),
+      child: i,
     );
   }
 }
